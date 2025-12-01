@@ -10,5 +10,5 @@ public class Vendor {
     private String contactInfo;
     private String name;
 
-    private String type;
+    private Type type;
 }
