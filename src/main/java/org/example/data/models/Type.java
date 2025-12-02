@@ -16,5 +16,6 @@ public enum Type {
     RENTALS,
     INVITATION_CARD,
     VIDEOGRAPHER,
-    ACCOMMODATION
+    ACCOMMODATION,
+    BOUNCER
 }
