@@ -1,0 +1,20 @@
+package org.example.data.models;
+
+public enum Type {
+    PHOTOGRAPHER,
+    CATERER,
+    DJ,
+    DESIGNER_FOR_MALE,
+    DESIGNER_FOR_FEMALE,
+    DECORATION,
+    LOGISTICS,
+    SOUVENIRS,
+    CAKE,
+    RING,
+    HAIRSTYLIST,
+    MAKEUP_ARTIST,
+    RENTALS,
+    INVITATION_CARD,
+    VIDEOGRAPHER,
+    ACCOMMODATION
+}
