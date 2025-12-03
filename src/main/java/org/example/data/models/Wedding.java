@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
+@Document
 public class Wedding {
     @Id
     private String id;
@@ -17,7 +18,7 @@ public class Wedding {
     private String groomName;
     private List<Guest> guests;
     private List<Vendor> vendors;
-
+    private List<Proposal> proposals;
     private Checklist taskchecklist;
     private String location;
 
