@@ -1,17 +1,17 @@
 package org.example.data.models;
-
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import java.time.LocalDate;
+import java.util.List;
 
 
 @Data
 @Document
-public class Budget {
+public class Booking {
     @Id
-    private String id;
-    private String totalBudget;
-    private String allocatedFunds;
-    private String expenses;
+    String id;
+    private Contract contract;
+    private boolean isBooked;
+    private LocalDate bookingDate;
 }
-

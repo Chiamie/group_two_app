@@ -6,6 +6,7 @@ import java.util.List;
 
 
 @Data
+@Document
 public class Checklist {
     @Id
     private String id;
