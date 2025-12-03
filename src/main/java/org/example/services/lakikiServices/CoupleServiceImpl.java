@@ -4,7 +4,7 @@ import lombok.NoArgsConstructor;
 import org.example.data.models.Couple;
 import org.example.data.models.Guest;
 import org.example.data.repositories.CoupleRepository;
-import org.example.data.repositories.lakikiRepo.GuestsRepository;
+import org.example.data.repositories.GuestRepository;
 import org.example.dtos.requests.coupleRequest.DeleteGuestRequest;
 import org.example.dtos.requests.coupleRequest.EditGuestRequest;
 import org.example.dtos.requests.coupleRequest.RegisterCoupleRequest;
@@ -25,7 +25,7 @@ public class CoupleServiceImpl implements CoupleService {
 
     @Autowired
     private CoupleRepository coupleRepository;
-    private GuestsRepository guestsRepository;
+    private GuestRepository guestRepository;
 
 
     @Override
@@ -45,7 +45,7 @@ public class CoupleServiceImpl implements CoupleService {
     @Override
     public EditGuestResponse editGuest(EditGuestRequest request) {
 
-        Optional<Guest> guest = guestsRepository.findById(request.getId());
+        Optional<Guest> guest = guestRepository.findById(request.getId());
 
         if (!guest.isPresent()) throw new GuestExistException("Guest not found");
 
@@ -55,7 +55,7 @@ public class CoupleServiceImpl implements CoupleService {
         foundGuest.setEmail(request.getGuestEmail());
         foundGuest.setRSVP(request.getRSVP());
 
-        Guest updated = guestsRepository.save(foundGuest);
+        Guest updated = guestRepository.save(foundGuest);
 
         return CoupleMappers.editGuest(updated);
     }
@@ -63,10 +63,10 @@ public class CoupleServiceImpl implements CoupleService {
     @Override
     public DeleteGuestResponse removeGuest(DeleteGuestRequest request){
 
-        Optional<Guest> guest = guestsRepository.findById(request.getGuestId());
+        Optional<Guest> guest = guestRepository.findById(request.getGuestId());
         if (guest.isEmpty()) throw new RuntimeException("Guest not found");
 
-        guestsRepository.deleteById(request.getGuestId());
+        guestRepository.deleteById(request.getGuestId());
 
         return CoupleMappers.removeGuest(request.getGuestId());
     }
