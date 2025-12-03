@@ -13,4 +13,5 @@ public class Guest {
     private String contact;
     private String email;
     private String RSVP;
+
 }
