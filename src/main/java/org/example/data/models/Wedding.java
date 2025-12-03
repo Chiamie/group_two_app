@@ -13,11 +13,15 @@ public class Wedding {
     private LocalDateTime date;
     private String name;
     private Budget weddingBudget;
+    private String brideName;
+    private String groomName;
     private List<Guest> guests;
     private List<Vendor> vendors;
 
     private Checklist taskchecklist;
     private String location;
+
+
 }
 
 
